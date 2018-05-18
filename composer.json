@@ -1,0 +1,26 @@
+{
+  "name": "jeanku/util",
+  "description": "util",
+  "license": "MIT",
+  "homepage": "",
+  "keywords": ["util", "log", "config", "request"],
+  "authors": [
+    {
+      "name": "JeanKu",
+      "email": "490573621@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Jeanku\\": "/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev"
+}
