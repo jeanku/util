@@ -19,8 +19,8 @@ class Config
     public static function get($name, $key = null)
     {
         if (!isset(self::$config[$name])) {
-            $path = WEBPATH .'/config/'. env('APP_ENV') . '/' . $name . '.php';
-            if (is_file($path) && is_readable($path)) {
+            $path = WEBPATH .'/config/' . $name . '.php';
+            if (is_file($path)) {
                 self::$config[$name] = require($path);
             }
         }

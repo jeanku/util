@@ -5,7 +5,7 @@ namespace Jeanku\Facades;
 /**
  * @see \Illuminate\Foundation\Application
  */
-class Response extends Facade
+class Container extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -14,6 +14,6 @@ class Response extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'response';
+        return 'app';
     }
 }
