@@ -147,7 +147,7 @@ class Log
     private static function _addLog($level, $title, $context)
     {
         $file = sprintf(self::FILE_PATH . '/%s.log', date('Ymd'));
-        $msg = sprintf("[%s]   %s   %s " . json_encode($context) . PHP_EOL, date('Y-m-d H:i:s'), strtoupper($level), $title);
+        $msg = sprintf("[%s]   %s   %s " . json_encode($context, JSON_UNESCAPED_UNICODE) . PHP_EOL, date('Y-m-d H:i:s'), strtoupper($level), $title);
         file_put_contents($file, $msg, FILE_APPEND);
     }
 
