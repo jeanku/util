@@ -2,9 +2,9 @@
 namespace Jeanku\Util;
 
 /**
- * 日志类
+ * Log class
  * @desc log
- * @package \Supercoach\Util
+ * @package \Jeanku\Util
  * @date 2017-09-13
  */
 class Log
