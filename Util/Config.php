@@ -16,7 +16,7 @@ class Config
      * @param string $key sometime key
      * @return array
      */
-    public function get($name, $key = null)
+    public static function get($name, $key = null)
     {
         if (!isset(self::$config[$name])) {
             $path = WEBPATH .'/config/' . $name . '.php';
