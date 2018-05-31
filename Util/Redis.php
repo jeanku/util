@@ -6,7 +6,7 @@ namespace Jeanku\Util;
  * @desc Redis
  * @package \Jeanku\Util
  */
-class Predis
+class Redis
 {
 
     protected static $instance = [];

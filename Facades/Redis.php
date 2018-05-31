@@ -5,7 +5,7 @@ namespace Jeanku\Facades;
 /**
  * @see \Illuminate\Foundation\Application
  */
-class Predis extends Facade
+class Redis extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -14,6 +14,6 @@ class Predis extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'predis';
+        return 'redis';
     }
 }
