@@ -6,7 +6,7 @@ namespace Jeanku\Util;
  * @desc Redis
  * @package \Jeanku\Util
  */
-class Redis
+class Predis
 {
 
     protected static $instance = [];
@@ -19,7 +19,7 @@ class Redis
      * @return array
      * @throws \Exception
      */
-    public static function getConfig($database)
+    public function getConfig($database)
     {
         $config = app('config')->get('database', 'redis');
         if (isset($config[$database])) {
@@ -34,12 +34,12 @@ class Redis
      * @param string $database option redis database
      * @return array
      */
-    public static function getInstance($database = 'default')
+    public function instance($database = 'default')
     {
         if (!isset(self::$instance[$database])) {
-            $config = self::getConfig($database);
+            $config = $this->getConfig($database);
             $redis = new \Redis();
-            $redis->pconnect($config['host'], $config['port']); 
+            $redis->pconnect($config['host'], $config['port']);
             $redis->select($config['database']);
             self::$instance[$database] = $redis;
         }

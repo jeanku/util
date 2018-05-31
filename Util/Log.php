@@ -31,9 +31,9 @@ class Log
      * @demo Log::debug('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function debug($title, array $context = array())
+    public function debug($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -46,9 +46,9 @@ class Log
      * @demo Log::info('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function info($title, array $context = array())
+    public function info($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -60,9 +60,9 @@ class Log
      * @demo Log::notice('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function notice($title, array $context = array())
+    public function notice($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -74,9 +74,9 @@ class Log
      * @demo Log::warning('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function warning($title, array $context = array())
+    public function warning($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -88,9 +88,9 @@ class Log
      * @demo Log::error('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function error($title, array $context = array())
+    public function error($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -102,9 +102,9 @@ class Log
      * @demo Log::critical('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function critical($title, array $context = array())
+    public function critical($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -116,9 +116,9 @@ class Log
      * @demo Log::alert('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function alert($title, array $context = array())
+    public function alert($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -130,9 +130,9 @@ class Log
      * @demo Log::emergency('debug info', ['errorCode' => 'error code', 'errorMsg' => 'error message']);
      * @return array
      */
-    public static function emergency($title, array $context = array())
+    public function emergency($title, array $context = array())
     {
-        return self::_addLog(__FUNCTION__, $title, $context);
+        return $this->_addLog(__FUNCTION__, $title, $context);
     }
 
 
@@ -144,7 +144,7 @@ class Log
      * @param array $context option 日志内容
      * @return array
      */
-    private static function _addLog($level, $title, $context)
+    private function _addLog($level, $title, $context)
     {
         $file = sprintf(self::FILE_PATH . '/%s.log', date('Ymd'));
         $msg = sprintf("[%s]   %s   %s " . json_encode($context, JSON_UNESCAPED_UNICODE) . PHP_EOL, date('Y-m-d H:i:s'), strtoupper($level), $title);
