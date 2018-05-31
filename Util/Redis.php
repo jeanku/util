@@ -39,7 +39,7 @@ class Redis
         if (!isset(self::$instance[$database])) {
             $config = self::getConfig($database);
             $redis = new \Redis();
-            $redis->pconnect($config['host'], $config['port']);
+            $redis->pconnect($config['host'], $config['port']); 
             $redis->select($config['database']);
             self::$instance[$database] = $redis;
         }
