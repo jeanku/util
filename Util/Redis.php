@@ -40,6 +40,9 @@ class Redis
             $config = self::getConfig($database);
             $redis = new \Redis();
             $redis->pconnect($config['host'], $config['port']);
+            if (!empty($config['password'])) {
+                $redis->auth($config['password']);
+            }
             $redis->select($config['database']);
             self::$instance[$database] = $redis;
         }
